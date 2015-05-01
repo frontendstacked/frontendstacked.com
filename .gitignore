@@ -1,3 +1,19 @@
+# Build targets
+node_modules/
+bower_components/
+public/stylesheets/
+
+# Databases and such
+data/mongodb/
+
+# Compiled Files
+*.pyc
+*.egg*
+*.bak
+*.DS_Store
+*.map
+bin/
+
 # Logs
 logs
 *.log
