@@ -1,0 +1,32 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    margin: 30px;
+}
+.swatch {
+    display: inline-block;
+    height: 100px;
+    position: relative;
+    width: 100px;
+
+    footer {
+        background-color: white;
+        border: solid 1px;
+        bottom: 0;
+        font-family: "helvetica", sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        height: 25px;
+        overflow: hidden;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+input[type='text'] {
+    display: inline;
+    width: 25%;
+}
+input[type='submit'] {
+    width: 10%;
+}

@@ -1,0 +1,27 @@
+@import "grid.scss";
+
+$columns: 12;
+$column-width: 75;
+$gutter-width: 25;
+
+$total-width: 100%;
+
+body {
+    margin: 0 auto!important;
+//    max-width: 1200px;
+    min-width: 320px;
+}
+#grid {
+    @include column(12);
+
+    @media(min-width: 1000px) {
+        @include column(8);
+    }
+}
+.grid-menus {
+    @include column(12);
+
+    @media(min-width: 1000px) {
+        @include column(4);
+    }
+}

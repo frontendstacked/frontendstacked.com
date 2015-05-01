@@ -1,0 +1,102 @@
+{% extends 'layout.html' %}
+
+{% block head.css %}
+    <link rel="stylesheet" type="text/css" href="/bower_components/gridster.js/dist/jquery.gridster.min.css" />
+{% endblock %}
+
+{% block head.js %}
+{% endblock %}
+
+{% block body.js %}
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/bower_components/underscore/underscore-min.js"></script>
+    <script src="/bower_components/gridster.js/dist/jquery.gridster.with-extras.js"></script>
+    <script src="/javascripts/gridthang.js"></script>
+{% endblock%}
+
+{% block content %}
+    <h1 class="gridster-heading">Gridster Test</h1>
+
+    <main class="gridster" id="grid">
+        <ul id="gridster-grid">
+            <li data-row="1" data-col="1" data-sizex="8" data-sizey="1" data-model="Color" data-model-id="55107e544fced62f210ab4d7" class="gs-w">
+                <div class="widget-content"><p class="gridster-textarea gridster-heading" style="text-align:center">Hulk SMASH!</p></div>
+                <a href="#replaceme" class="joyride-close-tip">&#215;</a>
+            </li>
+            <li data-row="2" data-col="1" data-sizex="1" data-sizey="5" data-model="Background" data-model-id="5535746b3e38d70867f90c58" class="gs-w">
+                <div class="widget-content"><p class="gridster-textarea">Thor iron man, Captain, America.</p></div>
+                <a href="#replaceme" class="joyride-close-tip">&#215;</a>
+            </li>
+        </ul>
+    </main>
+
+    <aside class="grid-menus">
+        <menu class="button-group radius">
+            <button id="addWidget" class="secondary">
+                Add
+            </button>
+            <button id="save" class="secondary">
+                Save
+            </button>
+            <button id="load" class="secondary">
+                Reset
+            </button>
+        </menu>
+        <dl>
+            <dt>Colors</dt>
+            <dd>
+                <ul class="inline">
+                    {% for c in colors %}
+                        <li>
+                            <section class="swatch"
+                                data-model="Color"
+                                style="
+                                    background-color:{{ c.hex }};
+                                    border-color:{{ c.hex }};
+                                ">
+
+                                <a href="#replaceme" class="joyride-close-tip">&#215;</a>
+                                <footer style="color: {{ c.hex }}">
+                                    {{ c.name }}
+                                </footer>
+
+                            </section>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </dd>
+            <dt>Images</dt>
+            <dd>
+                <ul class="inline">
+                    {% for b in bgs %}
+                        <li>
+                            <section class="swatch"
+                                data-model="Background"
+                                style="
+                                    background-color: white;
+                                    background-image:url({{ b.uri }});
+                                    background-size: 65%;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                ">
+
+                                <a href="#replaceme" class="joyride-close-tip">&#215;</a>
+                                <footer style="color: khaki; background-color: rgba(168, 180, 0, 1);">
+                                    {{ b.name }}
+                                </footer>
+
+                            </section>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </dd>
+            <dt>Serialzed Output</dt>
+            <dd>
+                <textarea id="gridster-out">
+                </textarea>
+            </dd>
+        </dl>
+    </aside>
+
+{% endblock content %}

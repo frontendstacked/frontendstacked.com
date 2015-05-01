@@ -1,0 +1,14 @@
+@import "fonts";
+
+// Splats
+.splat {
+    &:before {
+        color: white;
+        content: '\60'; //starts @21
+        display: inline-block;
+        font-family: "rhesus_splats";
+        font-size: 200px;
+        line-height: 1;
+        margin: 0;
+    }
+}

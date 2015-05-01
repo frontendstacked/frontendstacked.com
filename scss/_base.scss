@@ -1,0 +1,185 @@
+@import "colors";
+@import "layout";
+@import "icons";
+
+// WIP! Chop up and organize
+html {
+  font-family: 'din-condensed-web';
+}
+body {
+  background-color: $olive-drab;
+}
+dt {
+  font-family: 'museo-slab';
+  font-weight: 500;
+}
+.gridster {
+  border-color: olivedrab;
+  min-height: 430px;
+  padding-top: 5px;
+  //width: 600px;
+
+  &:before {
+    content: '';
+    display: block;
+    border-bottom: 4px dashed rgba(255,0,0,0.3);
+    z-index: 1000;
+    position: absolute;
+    //width: 600px;
+    top: 430px;
+  }
+
+  ul#gridster-grid {
+    background-color: seashell;
+    list-style: none;
+    -webkit-perspective: 1000;
+    transform-origin: left top;
+    width:
+  }
+
+  li {
+    background-color: white;
+    border: 1px solid rgba(100,100,100, 0.3);
+
+    &:hover .joyride-close-tip {
+      opacity: 1;
+    }
+  }
+  .widget-content {
+    width: 100%;
+    height: 100%;
+
+    p {
+      padding: 10px 5px;
+    }
+  }
+  .joyride-close-tip {
+    font-size: 20px;
+    opacity: 0;
+    right: 4px;
+    top: 3px;
+
+    &:hover {
+      color: #6E273D!important;
+    }
+  }
+}
+.gridster-textarea {
+  width: 100%;
+  height: 100%;
+  background-color: seashell;
+  border: none;
+}
+.gridster-heading {
+  border-bottom: solid 1px rgba(255,255,255,0.3);
+  font-family: 'din-condensed-web';
+  font-family: 'nimbus-sans';
+  font-family: 'brandon-grotesque';
+  font-family: 'ambulance_shotgunregular';
+  font-size: 80px;
+
+  &.gridster-textarea {
+    border: none;
+    font-size: 40px;
+    line-height: 1;
+  }
+}
+#gridster-out {
+  font-family: consolas;
+  font-size: 11px;
+  width: 100%;
+  height: 50px;
+  border: none;
+}
+menu {
+  padding: 0;
+  text-align: left;
+}
+.gridster, dl {
+  display: inline-block;
+}
+ul.inline {
+  list-style: none;
+
+  & > li {
+    display: inline-block;
+  }
+}
+dt {
+  color: white;
+}
+
+// SIDEBOARD ===================================================================
+
+.sideboard {
+  @include clearfix;
+  border: 1px solid white;
+  margin: 0 auto;
+  width: 98%;
+
+  article {
+    background-color: #efefef;
+    display: inline;
+  }
+}
+.sideboard-header {
+  background-color: $light-olive;
+  border-bottom: 1px solid $olive;
+}
+.sideboard-body {
+  background-color: seashell;
+}
+.img.splat {
+  border: 1px solid $olive;
+  width: 147px;
+  height: 90px;
+}
+
+// ================================================================ DRAOBEDIS //
+
+ul.inline {
+  list-style: none;
+  margin: 0;
+
+  li {
+    display: inline-block;
+  }
+}
+
+.hero-master {
+  background-image: url('/svg/fes-constructiv-cols-1x3.svg'),
+    -webkit-radial-gradient(50% 50%, farthest-side,$khaki,$olive-drab);
+  background-size: 150%, 50% 100%;
+  background-position: top right;
+  background-repeat: no-repeat;
+  height: 400px;
+
+  h1 {
+    font-family: "ambulance_shotgunregular";
+    font-size: 160px;
+    line-height: 1;
+    width: 100%;
+    text-align: right;
+  }
+  h2 {
+    font-family: "alternate-gothic-no-1-d", impact;
+    font-size: 80px;
+    line-height: 1;
+    position: relative;
+    text-align: right;
+    text-transform: uppercase;
+    top: 15px;
+    width: 100%;
+  }
+  // Splats
+  .splat {
+    position: absolute;
+    top: 32px;
+    left: -100px;
+    transform: rotate(60deg);
+
+    &:before {
+      font-size: 350px;
+    }
+  }
+}
