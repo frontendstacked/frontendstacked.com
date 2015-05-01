@@ -7,6 +7,6 @@ frontendstacked.com
 1. npm install
 2. bower install
 
--grunt web
--grunt db
--grunt watch
+*grunt web
+*grunt db
+*grunt watch
