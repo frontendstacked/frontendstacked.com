@@ -4,19 +4,20 @@
 #
 
 BOWER = $(CURDIR)/node_modules/.bin/bower
+GRUNT = $(CURDIR)/node_modules/.bin/grunt
 
 install: node_modules bower_components build
 
-# Hand off build to Gruntfile
-build:
-	grunt build
-
 clean:
-	rm -rf node_modules/ bower_components/ public/stylesheets/*
+	rm -rf ./node_modules/ ./bower_components/ ./public/stylesheets/* ./public/bower_components
 
 node_modules:
 	npm install
 
 bower_components:
 	$(BOWER) install
-	ln -s $(CURDIR)/bower_components $(CURDIR)/public
+	ln -sfv $(CURDIR)/bower_components $(CURDIR)/public
+
+# Hand off build to Gruntfile
+build:
+	$(GRUNT) build
