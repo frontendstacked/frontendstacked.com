@@ -16,8 +16,13 @@ node_modules:
 
 bower_components:
 	$(BOWER) install
+	# link bower_components to public (for now)
 	ln -sfv $(CURDIR)/bower_components $(CURDIR)/public
 
-# Hand off build to Gruntfile
-build:
+mongo:
+	# prep database dir
+	mkdir -p ./data/mongodb
+
+build: mongo
+	# Hand off build to Gruntfile
 	$(GRUNT) build
