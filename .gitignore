@@ -2,6 +2,7 @@
 node_modules/
 bower_components/
 public/stylesheets/
+public/bower_components*
 
 # Databases and such
 data/mongodb/
@@ -12,7 +13,6 @@ data/mongodb/
 *.bak
 *.DS_Store
 *.map
-bin/
 
 # Logs
 logs
