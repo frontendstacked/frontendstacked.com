@@ -1,4 +1,4 @@
-/*jshint strict:false */
+/*jshint strict:false, indent: 2 */
 
 /**
  * Need a reference? Check out Ben Alman's repo for samples and examples:
@@ -13,7 +13,7 @@ module.exports = function (grunt) {
      * their own files in the grunt-tasks dir.
      */
     grunt.initConfig({
-        pkg: require('./package.json')
+      pkg: require('./package.json')
     });
 
     /**
@@ -28,6 +28,6 @@ module.exports = function (grunt) {
     grunt.registerTask('build', ['sass']);
     grunt.registerTask('db', ['shell:mongod']);
     grunt.registerTask('web', ['shell:nodemon']);
-    grunt.registerTask('develop', ['build', 'watch']);
+    grunt.registerTask('develop', ['build', 'browserSync:dev', 'watch']);
     grunt.registerTask('default', ['develop']);
 };
