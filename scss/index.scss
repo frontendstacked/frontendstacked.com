@@ -3,10 +3,35 @@
 @import "fonts";
 @import "typography";
 @import "base";
+@import "modules/top-nav";
 
-// body {
-//     background-color: #666;
-// }
-// main {
-//     background-color: $olive-drab;
-// }
+.welcome {
+    background: $olive;
+    background: -moz-linear-gradient(left, $olive 0%, $olive-drab 100%);
+    background: -webkit-linear-gradient(left, $olive 0%, $olive-drab 100%);
+    background: -o-linear-gradient(left, $olive 0%, $olive-drab 100%);
+    background: -ms-linear-gradient(left, $olive 0%, $olive-drab 100%);
+    background: linear-gradient(to right, $olive 0%, $olive-drab 100%);
+    overflow: hidden;
+    position: relative;
+
+    h2 {
+        font-family: "Slabo 13px";
+        font-size: 1.5em;
+        font-style: italic;
+        margin: 0;
+        margin-bottom: -8px;
+        padding: 0.5em;
+        padding-bottom: 0;
+        position: relative;
+        z-index: 1;
+
+        small {
+            color: white;
+            font-size: 0.667em;
+            font-style: normal;
+            margin-left: 0.5em;
+            opacity: 0.8;
+        }
+    }
+}

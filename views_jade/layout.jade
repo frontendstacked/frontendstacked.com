@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title #{title} | Matt.Dodson.Digital
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed|Roboto', rel='stylesheet', type='text/css')
+
+    block head.css
+      link(href='/stylesheets/index.css', rel='stylesheet', type='text/css')
+
+    block head.js
+      script(src='bower_components/modernizr/modernizr.js')
+  body
+    block content
+    block body.js
+      script(src='bower_components/jquery/dist/jquery.min.js')
+      script(src='bower_components/jquery-ui/jquery-ui.min.js')

@@ -1,8 +1,19 @@
-extends chassis
+extends layout
 
 block content
-  //- include ./modules/hero-master.jade
-  //- hr
-  //- include ./modules/sideboard.jade
+  .off-canvas-wrap
+    .inner-wrap
+      .welcome
+        h2 Greetings and salutations!
+          small Please excuse my dust!
+      include modules/top-nav
+
+      main
+          ol.font-options
+            li Normal, Body Copy (default)
+            li.header-sm Slab, Small Headers
+            li.header-lg Condensed, Large Headers
+            li.strong Strong, Body Copy
+
 
   .svg
