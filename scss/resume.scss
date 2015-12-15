@@ -70,7 +70,10 @@ border: solid 1px rgba(175,175,175,0.5);
             line-height: 1.5;
         }
 
-        &.past-year, .recent-year {
+        &.past-year {
+            // color
+        }
+        &.recent-year {
             color: white;
         }
         &.current-year {
