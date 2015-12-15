@@ -1,0 +1,167 @@
+extends ../layout
+
+block head.webfonts
+  link(href='https://fonts.googleapis.com/css?family=Lato:400,600,700,800|Work+Sans:400,600,700,800|Cabin+Condensed|Bangers', rel='stylesheet', type='text/css')
+
+block head.css
+  link(href='/stylesheets/resume.css', rel='stylesheet', type='text/css')
+
+block content
+  .letter
+    main.page
+      ul.timeline.dark
+        li.col-1.past-year 1998
+        li.col-1.past-year.elip ...
+        li.col-1.past-year 2012
+        li.col-1.recent-year 2013
+        li.col-1.recent-year 2014
+        li.col-1.current-year 2015
+        li.col-6.ad Front End&#160;
+          span.alt Web Developer
+      //- ul.skills
+      //-   each item, index in resume_content.proficiencies
+      //-     li= item.name
+
+      .row
+        .col-6.bor
+          ul.contact-card
+            li.primary matthew.dodson.dc@gmail.com
+            li.primary
+              small github&#160;
+              span frontendstacked
+            li.alt (202) 617-0025
+        .col-6
+          ul.name-card
+            li.first-name Matthew
+            li.last-name Dodson
+      .row.dark
+        .mid-page-ad
+          p Prefer&#160;
+            span.alt Single Page Apps?&#160;
+            span Fan of&#160;
+            span.alt MVC/MVVM?&#160;
+          p You may prefer to view my resume app:&#160;
+            a(href='http://matt.frontendstacked.com') matt.frontendstacked.com&#160;
+      .row
+        .col-6.bor.job-history-col
+          .row.job-history-item
+            .col-3.date
+              p.start 2013
+              p.end ~oct 2015
+            .col-9.desc
+              p.org Celerity IT, LLC
+              p.url
+                a(href='http://www.pbslearningmedia.org', target='blank') www.pbslearningmedia.org
+              p.duties Apply front end development best practices to PBS LearningMedia website. Primary liaison between design &amp; dev teams. Convert PSDs to Django templates.
+              ul.tek
+                li.tek-item HTML 5
+                li.tek-item Less
+                li.tek-item JS
+                li.tek-item Django
+                li.tek-item Bootstrap
+                li.tek-item Backbone
+                li.tek-item Angular
+                li.tek-item CSS 3 Transitions
+          .row.job-history-item
+            .col-3.date
+              p.start 2012
+              p.end ~feb 2013
+            .col-9.desc
+              p.org Hirshorn-Zuckerman Design Group
+              p.url
+                a(href='http://www.hzdg.com', target='blank') www.hzdg.com
+              p.duties Senior Front End Dev at a boutique design and development firm. Leverage Backbone &amp; Bootstrap to convert PSDs into high quality websites &amp; mobile apps while delegating tasks to and training junior devs.
+              ul.tek
+                li.tek-item HTML 5
+                li.tek-item Less
+                li.tek-item Sass
+                li.tek-item JS
+                li.tek-item Django
+                li.tek-item Flash
+                li.tek-item WordPress
+                li.tek-item Bootstrap
+                li.tek-item Backbone
+                li.tek-item CoffeeScript
+          .row.job-history-item
+            .col-3.date
+              p.start 2007
+              p.end ~aug 2012
+            .col-9.desc
+              p.org The Washington Post Co.
+              p.url
+                a(href='http://www.slate.com', target='blank') www.slate.com
+              p.duties Front End Dev on Slate Magazine with a focus on designing and developing interactive components on various stories for editorial staff.
+              ul.tek
+                li.tek-item Flash
+                li.tek-item HTML 5
+                li.tek-item CSS
+                li.tek-item OOJS
+                li.tek-item Bootstrap
+                li.tek-item CoffeeScript
+                li.tek-item CQ5
+                li.tek-item .NET
+                li.tek-item XSLT
+                li.tek-item PHP
+                li.tek-item Drupal
+          //- .row.job-history-item.bot.disc
+          //-   .col-12.desc
+          //-     p Abridged. A more comprehensive list is available.
+          .row.job-history-item.bot
+            .col-12.desc
+              p.duties.notes Please note: This single-page resume goes back 8 years. For a full job history and more detail, please check out my online resume app at the URL below.
+          .row
+            .fes-cta
+                a.link(href='http://matt.frontendstacked.com') matt.frontendstacked.com
+
+        .col-6.bio-col
+          .row.bob
+            ul.bio-head
+              li Profile
+              li Skills
+              li.alt Education
+          .row.profile.bio-block
+            h5 a little bit about me
+            p
+              strong Matt Dodson&#160;&#160;
+              span is a front end-focused Web developer and Flash expatriate that is also competent in design and the back end area of the Web technology stack.
+
+            p He started his dev career in 2001 as a Web designer and developer for a small startup in Washington, DC, handling the full stack of small FileMaker Pro-backed Web apps for local non-profits, in addition to teams at larger companies such as Cisco &amp; Ricoh.
+
+            p He began focusing primarily on the front end of the web stack in 2007 at The Washington Post. As a part of the dev team for Slate Magazine, he was able to use his eye for design and object-oriented programming skills to create interactive features for various stories published on the site.
+
+            p.last After a short stint working on ultra-modern sites and apps for HZDG&mdash;a fellowship, really&mdash;he took an opportunity to bring what he learned to PBS. Most recently, he played a key role in the implementation of the site redesign of PBS LearningMedia and their various Teacher &amp; Student Tools apps.
+          .row.skills.bio-block
+            h5 some of my technical skills
+            .col-4
+              h6 Languages
+              ul.skills-list
+                li JavaScript
+                li HTML
+                li CSS/Less/Sass
+                li Python
+                li PHP
+            .col-4
+              h6 Frameworks
+              ul.skills-list
+                li Backbone
+                li Angular
+                li Bootstrap
+                li Foundation
+                li Django
+            .col-4
+              h6 The Rest
+              ul.skills-list
+                li Git/Subversion
+                li jQuery + jQuery UI
+                li Grunt/Gulp
+                li Node
+                li CQ5 (Java)
+          .row.skills-disc Full list and charts available in my online resume at the link, below-left
+          .row.edu.bio-block
+            h5 my education history
+            p An autodidact for most of my career, but I began putting myself through college at Strayer University part-time at the turn of the decade, completing the CS classes first. I'm about 75% complete with my entire BS, but I recently was accepted to Penn State's online program and hope to finish my degree there.
+
+
+
+
+block body.js

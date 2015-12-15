@@ -4,7 +4,8 @@ html
     title #{title} | Matt.Dodson.Digital
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(href='https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed|Roboto', rel='stylesheet', type='text/css')
+    block head.webfonts
+      link(href='https://fonts.googleapis.com/css?family=Slabo+13px|Roboto+Condensed|Roboto', rel='stylesheet', type='text/css')
 
     block head.css
       link(href='/stylesheets/index.css', rel='stylesheet', type='text/css')

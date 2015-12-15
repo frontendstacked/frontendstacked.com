@@ -22,7 +22,8 @@ module.exports = function (grunt) {
       },
       files: {
         'public/stylesheets/app.css': 'scss/app.scss',
-        'public/stylesheets/index.css': 'scss/index.scss'
+        'public/stylesheets/index.css': 'scss/index.scss',
+        'public/stylesheets/resume.css': 'scss/resume.scss'
       }
     }
   });
