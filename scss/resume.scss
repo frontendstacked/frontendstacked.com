@@ -23,7 +23,7 @@ $sans-font: 'Gill Sans', 'Lato', sans-serif;
 }
 
 body {
-//background: transparent;
+background: transparent;
     color: rgb(125, 125, 125);
     font-family: $sans-font;
 }
@@ -38,14 +38,14 @@ a, a:visited {
 
 .letter {
     background-color: white;
-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+// box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     height: 11in;
-margin: 20px auto;
+margin: auto;
     overflow: hidden;
     width: 8.5in;
 }
 .page {
-border: solid 1px rgba(175,175,175,0.5);
+//border: solid 1px rgba(175,175,175,0.5);
     height: 100%;
     padding: 0;
     margin: 0;
@@ -200,6 +200,11 @@ border: solid 1px rgba(175,175,175,0.5);
     .notes {
         text-align: justify;
         padding: 0 17px;
+
+        &.disc {
+            font-size: 13px;
+            line-height: 1.2;
+        }
     }
     p {
         margin: 0;
