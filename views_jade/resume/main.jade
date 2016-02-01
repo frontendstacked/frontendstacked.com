@@ -7,48 +7,109 @@ block head.css
   link(href='/stylesheets/resume.css', rel='stylesheet', type='text/css')
 
 block content
-  .letter
+  .letter.container
     main.page
       ul.timeline.dark
-        li.col-1.past-year 1998
-        li.col-1.past-year.elip ...
-        li.col-1.past-year 2012
-        li.col-1.recent-year 2013
-        li.col-1.recent-year 2014
-        li.col-1.current-year 2015
-        li.col-6.ad Front End&#160;
+        li.col-xs-2.col-sm-1.past-year 1998
+        li.col-xs-2.col-sm-1.past-year.elip ...
+        li.col-xs-2.col-sm-1.past-year 2012
+        li.col-xs-2.col-sm-1.recent-year 2013
+        li.col-xs-2.col-sm-1.recent-year 2014
+        li.col-xs-2.col-sm-1.current-year 2015
+        li.hidden-xs.col-sm-6.ad Front End&#160;
           span.alt Web Developer
-      //- ul.skills
-      //-   each item, index in resume_content.proficiencies
-      //-     li= item.name
 
+      .row.position.visible-xs
+        .col-xs-12.ad.bot Front End&#160;
+          span.alt Web Developer
       .row
-        .col-6.bor
+        .col-xs-12.visible-xs.vcard
+          ul.name-card.fn
+            li.first-name Matthew
+            li.last-name Dodson
+        .col-xs-12.col-sm-6.contact-card-cntr.bor
           ul.contact-card
-            li.primary matthew.dodson.dc@gmail.com
+            li.primary.email
+              a(href='mailto:matthew.dodson.dc@gmail.com') matthew.dodson.dc
+                span.emailat gmail.com
             li.primary
-              small github&#160;
-              span frontendstacked; dodsonm
-            li.alt (202) 617-0025
-        .col-6
+              small githubs&#160;
+              a(href='http://github.com/frontendstacked', target='_blank') frontendstacked
+              span ;
+              a(href='http://github.com/dodsonm', target='_blank') dodsonm
+            li.alt.tel (202) 617-0025
+        .col-sm-6.hidden-xs
           ul.name-card
             li.first-name Matthew
             li.last-name Dodson
       .row.dark
-        .mid-page-ad
+        .mid-page-ad.visible-xs
+          p If you have a desktop browser handy, feel free to check out my MVC app version&#160;
+            a(href='http://matt.frontendstacked.com') matt.frontendstacked.com&#160;
+        .mid-page-ad.visible-sm.visible-md.visible-lg
           p Prefer&#160;
             span.alt Single Page Apps?&#160;
             span Fan of&#160;
             span.alt MVC/MVVM?&#160;
-          p Please check out out my resume app at&#160;
+          p Feel free to check out out my resume app at&#160;
             a(href='http://matt.frontendstacked.com') matt.frontendstacked.com&#160;
       .row
-        .col-6.bor.job-history-col
+        .col-xs-12.col-sm-6.bio-col
+          .row.bob.hidden-xs
+            ul.bio-head
+              li Profile
+              li Skills
+              li.alt Education
+          .row.profile.bio-block
+            h5 a little bit about me
+            p
+              strong Matt Dodson&#160;&#160;
+              span is a front end-focused Web developer, Flash expatriate, and Agile evangelist (certified ScrumMaster). Right-brained and highly creative, yet he is competent in the back end of the Web technology stack.
+
+            p He started his dev career in 2001 as a Web designer and developer for a small startup in Washington, DC, handling the full stack of FileMaker Pro-backed Web apps. His clients included many local non-profits, in addition to teams at larger corporations such as Cisco &amp; Ricoh.
+
+            p His front end focus began in 2007 at The Washington Post. As a member of the dev team for Slate Magazine, he showed a knack for marrying design to object-oriented code and earned a position creating&mdash;sometimes also designing&mdash;interactive features for stories published in the magazine.
+
+            p.last After 6 months working on ultra-modern Web projects for HZDG&mdash;a fellowship in cutting-edge front end tech&mdash;he took an opportunity to bring what he learned to PBS. Most recently, he played a key role in the implementation of the site redesign of PBS LearningMedia and its Teacher &amp; Student Tools apps.
+          .row.skills.bio-block
+            h5 some of my technical skills
+            .col-xs-4
+              h6 Languages
+              ul.skills-list
+                li JavaScript
+                li HTML
+                li CSS/Less/Sass
+                li Python
+                li PHP
+            .col-xs-4
+              h6 Frameworks
+              ul.skills-list
+                li Backbone
+                li Angular
+                li Bootstrap
+                li Foundation
+                li Django
+            .col-xs-4
+              h6 The Rest
+              ul.skills-list
+                li Git/Subversion
+                li jQuery + jQuery UI
+                li Grunt/Gulp
+                li Node
+                li Responsive Design
+          .row.skills-disc Full list and charts available in my online resume at the link, below-left
+          .row.edu.bio-block
+            h5 my education history
+            p An autodidact for most of my career, but I began putting myself through college at Strayer University part-time at the turn of the decade, completing the CS classes first. I'm about 75% complete with my entire BS, but I recently was accepted to Penn State's online program and hope to finish my degree there.
+        .col-xs-12.col-sm-6.bor.job-history-col
+          .row.bot
+            ul.bio-head.visible-xs
+              li.alt Job History
           .row.job-history-item
-            .col-3.date
+            .col-xs-2.col-sm-3.date
               p.start 2013
               p.end ~oct 2015
-            .col-9.desc
+            .col-xs-10.col-sm-9.desc
               p.org Celerity IT, LLC
               p.url
                 a(href='http://www.pbslearningmedia.org', target='blank') www.pbslearningmedia.org
@@ -61,12 +122,15 @@ block content
                 li.tek-item Bootstrap
                 li.tek-item Backbone
                 li.tek-item Angular
-                li.tek-item CSS 3 Transitions
+                li.tek-item CSS 3 Animation
+                li.tek-item Grunt
+                li.tek-item Bower
+                li.tek-item Selenium
           .row.job-history-item
-            .col-3.date
+            .col-xs-2.col-sm-3.date
               p.start 2012
               p.end ~feb 2013
-            .col-9.desc
+            .col-xs-10.col-sm-9.desc
               p.org Hirshorn-Zuckerman Design Group
               p.url
                 a(href='http://www.hzdg.com', target='blank') www.hzdg.com
@@ -78,16 +142,20 @@ block content
                 li.tek-item JS
                 li.tek-item Django
                 li.tek-item Flash
+                li.tek-item Volo
                 li.tek-item WordPress
                 li.tek-item Bootstrap
                 li.tek-item Backbone
                 li.tek-item CoffeeScript
           .row.job-history-item
-            .col-3.date
+            .col-xs-2.col-sm-3.date
               p.start 2007
               p.end ~aug 2012
-            .col-9.desc
-              p.org The Washington Post Co.
+            .col-xs-10.col-sm-9.desc
+              p.org The Washington Post
+                span.visible-print &#32;Co.
+                span.hidden-print &#32;Company
+                sup †
               p.url
                 a(href='http://www.slate.com', target='blank') www.slate.com
               p.duties Front End Dev on Slate Magazine with a focus on designing and developing interactive components on various stories for editorial staff.
@@ -96,73 +164,55 @@ block content
                 li.tek-item HTML 5
                 li.tek-item CSS
                 li.tek-item OOJS
-                li.tek-item Bootstrap
+                li.tek-item Ext JS
+                li.tek-item Django
                 li.tek-item PHP
                 li.tek-item Objective-C
-                li.tek-item CoffeeScript
                 li.tek-item CQ5
+                li.tek-item Java
                 li.tek-item .NET
                 li.tek-item XSLT
+              p.asterisk † Effective November 29, 2013: The Washington Post Company changed its name to Graham Holdings Company to coincide with the sale of The Washingtion Post
           //- .row.job-history-item.bot.disc
-          //-   .col-12.desc
+          //-   .col-xs-12.desc
           //-     p Abridged. A more comprehensive list is available.
-          .row.job-history-item.bot
-            .col-12.desc
-              p.duties.notes.disc Please note: This single-page resume goes back 8 years. For a full job history and more detail, please check out my online resume app at the URL below or feel free to email me to request a more comprehensive resume and/or references list.
-              P
-          .row
-            .fes-cta
-                a.link(href='http://matt.frontendstacked.com') matt.frontendstacked.com
+          .row.bot
+            .col-xs-10.col-xs-offset-1
+              p.history-note
+                span Please note: This single-page resume goes back eight years. For my full, seventeen-year job history and more detail, please check out my&#032;
+                a(href='http://matt.frontendstacked.com') online resume app
+                span&#032;or feel free to email me to request a more comprehensive resume and/or references list.
+          //- .row
+          //-   .fes-cta
+          //-       a.link(href='http://matt.frontendstacked.com') matt.frontendstacked.com
+      .row.hidden-print.bot
+        .col-xs-12
+          p.copyright Copyright &copy; 2016 Matthew Dodson. All rights reserved.
 
-        .col-6.bio-col
-          .row.bob
-            ul.bio-head
-              li Profile
-              li Skills
-              li.alt Education
-          .row.profile.bio-block
-            h5 a little bit about me
-            p
-              strong Matt Dodson&#160;&#160;
-              span is a front end-focused Web developer and Flash expatriate that is also competent in design and the back end area of the Web technology stack.
+block modal
+  div#greetingModal.modal.fade(tabindex="-1" role="dialog")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+            span(aria-hidden="true")&times;
+          h2.modal-title Welcome!
+           span.alt Thanks For Stopping By
 
-            p He started his dev career in 2001 as a Web designer and developer for a small startup in Washington, DC, handling the full stack of small FileMaker Pro-backed Web apps for local non-profits, in addition to teams at larger companies such as Cisco &amp; Ricoh.
-
-            p He began focusing primarily on the front end of the web stack in 2007 at The Washington Post. As a part of the dev team for Slate Magazine, he was able to use his eye for design and object-oriented programming skills to create interactive features for various stories published on the site.
-
-            p.last After a short stint working on ultra-modern sites and apps for HZDG&mdash;a fellowship, really&mdash;he took an opportunity to bring what he learned there to PBS. Most recently, he played a key role in the implementation of the site redesign of PBS LearningMedia and the first version of their various Teacher &amp; Student Tools apps.
-          .row.skills.bio-block
-            h5 some of my technical skills
-            .col-4
-              h6 Languages
-              ul.skills-list
-                li JavaScript
-                li HTML
-                li CSS/Less/Sass
-                li Python
-                li PHP
-            .col-4
-              h6 Frameworks
-              ul.skills-list
-                li Backbone
-                li Angular
-                li Bootstrap
-                li Foundation
-                li Django
-            .col-4
-              h6 The Rest
-              ul.skills-list
-                li Git/Subversion
-                li jQuery + jQuery UI
-                li Grunt/Gulp
-                li Node
-                li CQ5 (Java)
-          .row.skills-disc Full list and charts available in my online resume at the link, below-left
-          .row.edu.bio-block
-            h5 my education history
-            p An autodidact for most of my career, but I began putting myself through college at Strayer University part-time at the turn of the decade, completing the CS classes first. I'm about 75% complete with my entire BS, but I recently was accepted to Penn State's online program and hope to finish my degree there.
-
-
-
+        .modal-body
+          p Instead of a boring placeholder or "under construction" page, here's a small, single-page resume for you to check out. Hopefully, my full site will be available soon.
+          p I also have more comprehensive information in a single-page app,
+            a(href="http://matt.frontendstacked.com/", target="_blank")
+              &#32;available here.
+            small &#32;(sorry, desktops only right now)
+          p This page is printer-friendly, but please don't hesitate to email me if you'd like to see a full, more formal version of my resume.
+          .mini-form
+            input#stopGreeting(type='checkbox')
+            label(for='stopGreeting') Don't show again
+            button(type="button" class="btn btn-default" data-dismiss="modal") Close
 
 block body.js
+  script(src='https://code.jquery.com/jquery-1.12.0.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js' integrity='sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS' crossorigin='anonymous')
+  script(src='javascripts/resume.js')

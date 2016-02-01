@@ -1,5 +1,14 @@
 // Mostly targets 8-1/2 x 11 print media
-@import "base";
+@import "colors";
+@import "bootstrap/variables";
+$grid-gutter-width: 0;
+@import "bootstrap/mixins";
+@import "bootstrap/normalize";
+@import "bootstrap/buttons";
+@import "bootstrap/close";
+@import "bootstrap/grid";
+@import "bootstrap/modals";
+@import "bootstrap/responsive-utilities";
 
 $res-fuchsia: lighten(fuchsia, 10%);
 $res-cyan: rgb(75,225,255);
@@ -38,11 +47,13 @@ a, a:visited {
 
 .letter {
     background-color: white;
-// box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    height: 11in;
-margin: auto;
+    margin: auto;
     overflow: hidden;
-    width: 8.5in;
+
+    @media print {
+        height: 11in;
+        width: 8.5in;
+    }
 }
 .page {
 //border: solid 1px rgba(175,175,175,0.5);
@@ -59,15 +70,15 @@ margin: auto;
 
     & > li {
         border-right: dotted 1px lighten($burnt-wood, 50%);
-        font-size: 25px;
-        height: 50px;
+        font-size: 15px;
+        height: 30px;
         float: left;
         font-weight: 600;
-        line-height: 50px;
+        line-height: 30px;
         text-align: center;
 
         &.elip {
-            line-height: 1.5;
+            line-height: 2;
         }
 
         &.past-year {
@@ -82,54 +93,132 @@ margin: auto;
         &.ad {
             color: white;
             float: right;
-            font-family: 'Cabin Condensed', sans-serif;
-            font-size: 32px;
             padding-left: 30px;
             text-align: left;
+        }
 
-            .alt {
-                color: $res-fuchsia;
+        @media (min-width: $screen-sm-min) {
+            font-size: 25px;
+            height: 50px;
+            line-height: 55px;
+
+            &.elip {
+                line-height: 1.5;
             }
+        }
+    }
+}
+.position, .timeline {
+    .ad {
+        color: $res-cyan;
+        font-family: 'Cabin Condensed', sans-serif;
+        font-size: 32px;
+        text-align: center;
+
+        .alt {
+            color: $res-fuchsia;
+        }
+    }
+}
+.position {
+    .ad {
+        background-color: lighten($burnt-wood, 5%);
+        border-color: rgba(lighten($burnt-wood, 50%), 0.6);
+    }
+}
+.contact-card-cntr {
+    &.bor {
+        border-right-width: 0px;
+
+        @media (min-width: $screen-sm-min) {
+            border-right-width: 1px;
         }
     }
 }
 .contact-card {
     @include unlist();
     font-weight: 600;
-    height: 133px;
-    margin-right: 25px;
-    padding-top: 12px;
-    text-align: right;
+    margin-bottom: 10px;
+    text-align: center;
 
     .primary {
         color: lighten($burnt-wood, 10%);
         font-family: 'Cabin Condensed', sans-serif;
         font-size: 28px;
+
+        a {
+            color: inherit;
+
+            &:hover {
+                color: $res-fuchsia;
+            }
+        }
     }
     .alt {
         color: lighten($burnt-wood, 35%);
         font-size: 30px;
         letter-spacing: -2px;
     }
+    .emailat {
+        &:before {
+            content: '@';
+            display: inline;
+        }
+    }
     small {
         color: lighten($burnt-wood, 35%);
+    }
+
+    @media (min-width: $screen-sm-min) {
+        height: 133px;
+        margin-bottom: auto;
+        margin-right: 25px;
+        padding-top: 12px;
+        text-align: right;
+
+        .primary {
+            font-size: 28px;
+        }
+        .alt {
+            letter-spacing: -2px;
+        }
     }
 }
 .name-card {
     @include unlist();
     font-weight: 600;
-    letter-spacing: -5px;
+    letter-spacing: -2px;
     line-height: 1;
-    margin: 15px 25px;
+    margin: 15px 25px 5px;
+    text-align: center;
     text-transform: uppercase;
+
+    @media (min-width: $screen-sm-min) {
+        letter-spacing: -5px;
+        margin: 15px 25px;
+        text-align: left;
+    }
 }
 .first-name {
     color: lighten($burnt-wood, 10%);
+    display: inline-block;
     font-size: 48px;
+    margin-right: 0.2em;
+
+    @media (min-width: $screen-sm-min) {
+        display: block;
+        margin-right: 0;
+    }
 }
 .last-name {
     color: lighten($burnt-wood, 35%);
-    font-size: 55px;
+    display: inline-block;
+    font-size: 48px;
+
+    @media (min-width: $screen-sm-min) {
+        display: block;
+        font-size: 55px;
+    }
 }
 .mid-page-ad {
     font-family: $cond-font;
@@ -144,6 +233,9 @@ margin: auto;
         &:first-child {
             font-size: 23px;
         }
+    }
+    &.visible-xs p:first-child {
+        font-size: 16px;
     }
     .alt {
         color: $res-fuchsia;
@@ -174,7 +266,7 @@ margin: auto;
     .start {
         color: $res-fuchsia;
         font-size: 25px;
-        font-style: italic;
+        //font-style: italic;
     }
     .end {
         // font-family: $cond-font;
@@ -185,8 +277,12 @@ margin: auto;
         color: lighten($burnt-wood, 10%);
         font-family: $cond-font;
         font-size: 25px;
-        font-style: italic;
+        //font-style: italic;
         font-weight: 600;
+        sup {
+            font-size: 0.5em;
+            top: -1em;
+        }
     }
     .url {
         font-size: 18px;
@@ -202,34 +298,49 @@ margin: auto;
         padding: 0 17px;
 
         &.disc {
-            font-size: 13px;
+            font-size: 12px;
             line-height: 1.2;
         }
     }
     p {
         margin: 0;
     }
+    .asterisk {
+        font-size: 11px;
+    }
 }
 .job-history-col {
-    height: 811px;
+    border-right-width: 0!important;
     position: relative;
 
     .fes-cta {
         bottom: 5px;
         color: #666;
         font-size: 14px;
+        padding-right: 30px;
         position: absolute;
-        text-align: center;
+        text-align: right;
         width: 100%;
 
         .link {
-            font-size: 30px;
+            font-size: 31.5px;
             font-weight: 600;
         }
     }
+    @media (min-width: $screen-sm-min) {
+        border-right-width: 1px!important;
+    }
+    @media print {
+        height: 811px;
+    }
+}
+.history-note {
+    color: $burnt-wood;
+    font-size: 12px;
 }
 .tek {
     @include unlist();
+    @include clearfix();
     margin-top: 5px;
 }
 .tek-item {
@@ -260,12 +371,14 @@ margin: auto;
 }
 .bio-col {
     color: #666;
+    float: right;
+    margin-bottom: 15px;
 
     h5 {
         color: lighten($burnt-wood, 40%);
         font-family: $cond-font;
         font-size: 23px;
-        font-style: italic;
+        //font-style: italic;
         font-weight: 400;
         margin: 10px 0;
     }
@@ -310,7 +423,7 @@ margin: auto;
         color: darken($res-fuchsia, 0%);
         font-family: 'Bangers', $cond-font;
         font-size: 20px;
-        font-style: italic;
+        //font-style: italic;
         font-weight: normal;
     }
 }
@@ -344,6 +457,10 @@ margin: auto;
         margin: 0;
     }
 }
+.copyright {
+    font-size: 12px;
+    text-align: center;
+}
 //
 
 .bot {
@@ -358,44 +475,53 @@ margin: auto;
 .bol {
     border-left: dotted 1px rgba(75,75,75,0.4);
 }
-// roughed-in grid classes. No need for full framework here
 .row {
-    @include clearfix();
-
     &.dark {
         background-color: $burnt-wood;
         color: white;
     }
+    @media print {
+        // margin-left: 0;
+        // margin-right: 0;
+    }
 }
-.col-1 {
-    float: left;
-    width: (1/12 * 100) + %;
+.visible-print {
+    @media print {
+        display: inline!important;
+    }
 }
-.col-2 {
-    float: left;
-    width: (2/12 * 100) + %;
+.modal-content {
+    background-color: darken($burnt-wood, 5%);
+    color: white;
+    font-family: $cond-font;
 }
-.col-3 {
-    float: left;
-    width: (3/12 * 100) + %;
+.modal-header {
+    color: $res-cyan;
+    .alt {
+        color: $res-fuchsia;
+        margin-left: 8px;
+    }
+    .close {
+        color: $res-fuchsia;
+        font-size: 36px;
+        opacity: 0.8;
+        text-shadow: none;
+    }
 }
-.col-4 {
-    float: left;
-    width: (4/12 * 100) + %;
+.modal-body {
+    @include clearfix();
+    background-color: white;
+    color: $burnt-wood;
+
+    .mini-form {
+        float: right;
+        label {
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            margin: 8px 8px 8px 4px;
+            line-height: 1;
+        }
+    }
 }
-.col-5 {
-    float: left;
-    width: (5/12 * 100) + %;
-}
-.col-6 {
-    float: left;
-    width: 50%;
-}
-.col-9 {
-    float: left;
-    width: (9/12 * 100) + %;
-}
-.col-12 {
-    float: left;
-    width: 100%;
-}
+

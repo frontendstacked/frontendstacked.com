@@ -12,6 +12,7 @@ module.exports = function (grunt) {
   grunt.config('sass', {
     options: {
       includePaths: [
+        'bower_components/bootstrap-sass/assets/stylesheets',
         'bower_components/foundation/scss',
         'bower_components/semantic.gs/stylesheets/scss'
       ]
